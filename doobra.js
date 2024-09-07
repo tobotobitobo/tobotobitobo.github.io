@@ -3,7 +3,7 @@ var container = document.getElementById("container");
 var firstclick = true;
 function colochange(e)
 {
-    e.style.backgroundColor = "blue";
+    e.style.backgroundColor = "grey";
     e.style.height = "14vh";
     e.style.width = "max(13vw, 80px)";
     fuck = document.querySelectorAll(".game");
@@ -89,6 +89,11 @@ function back()
     firstclick = true;
     container.style.display = "none";
     
+
+}
+
+function right(num)
+{
 
 }
 
