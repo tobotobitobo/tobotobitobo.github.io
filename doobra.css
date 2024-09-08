@@ -1,165 +1,176 @@
 body {
-    background-color: black;
-      height: 100vh;
-      width: 100vw;
-      margin: 0px;
-      overflow: hidden;
-  }
+  background-color: black;
+    height: 100vh;
+    width: 100vw;
+    margin: 0px;
+    overflow: hidden;
+}
 #alltogether
 { 
-    gap: 20px;
-    position: absolute;
-    display: flex;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    justify-content: center;
-    align-items: center;  
+  gap: 20px;
+  position: absolute;
+  display: flex;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  justify-content: center;
+  align-items: center;  
 }
 #back
 {
-    position: fixed;
-    margin: 10px;
-    color: orange;
-    cursor: pointer;
+  position: fixed;
+  margin: 10px;
+  color: orange;
+  cursor: pointer;
 }
 
 .game
 {
-    height: 20vh;
-    transition: all 0.5s;
-    cursor: pointer;
-    border-radius: 20px;
-    display: flex;
-    width: max(20vw, 130px);
-    justify-content: center;
-    align-items: center;
-    background-color: orange;
+  height: 20vh;
+  transition: all 0.5s;
+  cursor: pointer;
+  border-radius: 20px;
+  display: flex;
+  width: max(20vw, 130px);
+  justify-content: center;
+  align-items: center;
+  background-color: orange;
 }
 #container
 {
-    display: none;
+  display: none;
 }
 .container
 {
-    display: flex;
-    position: absolute;
-    bottom: 0%;
-    gap: 50vw;
-    left: 25%;
+  display: flex;
+  position: absolute;
+  bottom: 0%;
+  gap: 50vw;
+  left: 25%;
 
 }
 .song
 {
-  background-color: gray;
-  margin: 10px;
-  border-radius: 10px;
-  display: flex;
+background-color: gray;
+margin: 10px;
+border-radius: 10px;
+display: flex;
 }
 .description
 {
-  margin: 5px;
+margin: 5px;
 }
 h3
 {
-  margin: 0px;
+margin: 0px;
 }
 h4
 {
-  margin: 0px;
+margin: 0px;
 }
 .img
 {
-  margin: 10px;
-  border-radius: 5px;
-  height: 120px;
+margin: 10px;
+border-radius: 5px;
+height: 120px;
 }
 .spotify
 {
-  height: 25px;
-  width: 60px;
-  border-radius: 3px;
-  border-color: white;
+height: 25px;
+width: 60px;
+border-radius: 3px;
+border-color: white;
 }
 .inside
 {
-    width: 50vw;
-    height: 70vh;
-    position: relative;
-    overflow: auto;
+  width: 50vw;
+  height: 70vh;
+  position: relative;
+  overflow: auto;
 }
 
 #playlist
 {
-  position: absolute;
-  left: 50%;
-  top: 5%;
-  transform: translate(-50%, 0%);
-  color: orange;
+position: absolute;
+left: 50%;
+top: 5%;
+transform: translate(-50%, 0%);
+color: orange;
 }
 #linkstory
 {
-  position: absolute;
-  left: 50%;
-  top: 10%;
-  transform: translate(-50%, 0%);
-  color: orange;
+position: absolute;
+left: 50%;
+top: 10%;
+transform: translate(-50%, 0%);
+color: orange;
 }
 .sipka1
 {
-  left: -100px;
-  content:'';
-  width:50px;
-  height:50px;
-  display: inline-block;
-  background:red;
-  position: absolute;
-  top: 30vh;
-  border-top-left-radius: 100%;
-  border-bottom-left-radius: 100%; 
+left: -100px;
+content:'';
+width:50px;
+height:50px;
+display: inline-block;
+background:red;
+position: absolute;
+top: 30vh;
+border-top-left-radius: 100%;
+border-bottom-left-radius: 100%; 
 }
 .sipka2
 {
-  right: -100px;
-  content:'';
-  width:50px;
-  height:50px;
-  display: inline-block;
-  background:red;
-  position: absolute;
-  top: 30vh;
-  border-top-right-radius: 100%;
-  border-bottom-right-radius: 100%; 
+right: -100px;
+content:'';
+width:50px;
+height:50px;
+display: inline-block;
+background:red;
+position: absolute;
+top: 30vh;
+border-top-right-radius: 100%;
+border-bottom-right-radius: 100%; 
 }
 
 .animation
 {
-  animation: moving2 1s forwards;
+animation: moving2 1s forwards;
 }
 
 .back
 {
-  animation: back 1s forwards;
+animation: back 1s forwards;
 }
 .incoming
 {
-  animation: incoming 1s forwards;
+animation: incoming 1s forwards;
+}
+
+.incoming2
+{
+animation: incoming2 1s forwards;
 }
 
 @keyframes moving2
 {
-  0%{top: 50%;}
-  100%{top: 20%;}
+0%{top: 50%;}
+100%{top: 20%;}
 }
 
 @keyframes back
 {
-  0%{top: 15%;}
-  100%{top: 50%;}
+0%{top: 15%;}
+100%{top: 50%;}
 }
 
 @keyframes incoming
 {
-  0%{bottom: -100%;}
-  100%{bottom: 0%;}
+0%{bottom: -100%;}
+100%{bottom: 0%;}
+}
+
+@keyframes incoming2
+{
+0%{bottom: 0%;}
+100%{bottom: -100%;}
 }
