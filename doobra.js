@@ -59,7 +59,7 @@ function click1(e)
     if(firstclick == true)
     {
         container.style.display = "flex";
-        container.classList.remove("incoming");
+        container.classList.remove("incoming2");
         container.classList.add("incoming");
         firstclick =    false;
     }
@@ -87,7 +87,9 @@ function back()
         element.style.width = "max(10vw, 70px)";
     });
     firstclick = true;
-    container.style.display = "none";
+
+    container.classList.remove("incoming");
+    container.classList.add("incoming2");
     
 
 }
