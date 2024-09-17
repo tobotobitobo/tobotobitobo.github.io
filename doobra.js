@@ -1,6 +1,8 @@
 var alltogether = document.getElementById("alltogether");
 var container = document.getElementById("container");
 var firstclick = true;
+var stvorec = 0;
+var base = getTranslateX(container);
 function colochange(e)
 {
     e.style.backgroundColor = "grey";
@@ -27,21 +29,25 @@ function match(e)
     {
         clicked = document.getElementById("metal");
         num = 0;
+        stvorec = 1;
     }
     else if (document.getElementById("game2") == e)
     {
         clicked = document.getElementById("niemetal");
         num = 2/7*100;
+        stvorec = 2;
     }
     else if (document.getElementById("game3") == e)
     {
         clicked = document.getElementById("neklikat");
         num = 2/7*100*2;
+        stvorec = 3;
     }
     else if (document.getElementById("game4") == e)
     {
         clicked = document.getElementById("la dispute");
         num = 2/7*100*3;
+        stvorec = 4;
     }
     return [clicked,num];
 }
@@ -52,13 +58,11 @@ function scroll(num)
     ({transform: `translate(${-num}%, 0%)`},
     {duration: 500, fill: "forwards"});
     
-    container.style.transform = `translate(${-num}%, 0%)`;
 }
 function click1(e)
 {
     if(firstclick == true)
     {
-        container.style.display = "flex";
         container.classList.remove("incoming2");
         container.classList.add("incoming");
         firstclick =    false;
@@ -66,8 +70,6 @@ function click1(e)
     colochange(e);
     [clicked, num] = match(e);
     scroll(num);
-    translate = getTranslateX(container);
-    console.log(translate/-3633.6 * 100)
 }
 
 function back()
@@ -93,10 +95,51 @@ function back()
     
 
 }
-
-function right(num)
+function farba(stvorec)
 {
+    switch (stvorec) {
+        case 1:
+            e = document.getElementById("game1");
+          break;
+        case 2:
+            e = document.getElementById("game2");
+          break;
+        case 3:
+            e = document.getElementById("game3");
+          break;
+        case 4:
+            e = document.getElementById("game4");
+          break;
+        default:
+      }
+      colochange(e);
+}
+function right()
+{
+    translate = getTranslateX(container);
+    console.log(translate)
+    console.log(base)
+    translate = translate + base;
+    console.log(translate)
+    container.animate
+    ({transform: `translate(${translate}px, 0%)`},
+    {duration: 500, fill: "forwards"});
+    stvorec++;
+    farba(stvorec);
+}
 
+function left()
+{
+    translate = getTranslateX(container);
+    console.log(translate)
+    console.log(base)
+    translate = translate - base;
+    console.log(translate)
+    container.animate
+    ({transform: `translate(${translate}px, 0%)`},
+    {duration: 500, fill: "forwards"});
+    stvorec--;
+    farba(stvorec);
 }
 
 function getTranslateX(element) {
