@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="firma.css">
+    <title>Image Transformation from Camera to State Space for Robot Navigation in a Maze</title>
+</head>
+<body>
+    <div id="fixed">
+
+        <header>
+            <h1>Image Transformation from Camera to State Space for Robot Navigation in a Maze</h1>
+        </header>
+    
+        <nav>
+            <ul>
+                <li><a href="#project">This Project</a></li>
+                <li><a href="#models">Models</a></li>
+                <li><a href="#dataset">Dataset</a></li>
+                <li><a href="#train">Train</a></li>
+                <li><a href="#evaluation">Evaluation</a></li>
+            </ul>
+        </nav>
+    </div>
+
+    <main>
+        <section id="project">
+            <div id="uvod">
+                <h2>This Project</h2>
+                <p>
+                    The overarching objective of this project is to develop a robust system for detecting and classifying objects within
+                    images captured by a camera. This involves not only identifying the presence of objects but also precisely
+                    determining their type and spatial characteristics, including their position and size within the image frame.
+                </p>
+                <p>
+                    The primary motivation for developing accurate object detection and classification capabilities was to
+                    enable the creation of a virtual agent capable of navigating through a simulated gridworld maze.
+                    This agent will utilize a pre-trained machine learning model or agent specifically designed to
+                    solve maze-like challenges.
+                </p>
+                <h3>Potential Applications and Future Directions</h3>
+                <p>
+                    <ul>
+                        <li>Autonomous Robotics: The system can be integrated into autonomous robots for tasks such as 
+                            exploration, search and rescue, and material handling in industrial settings.
+                        </li>
+                        <li>Augmented Reality (AR): The object detection and classification capabilities
+                            can enhance AR experiences by overlaying virtual objects onto real-world scenes, creating more immersive and interactive environments.
+                        </li>
+                        <li>Computer Vision Research: The project can serve as a foundation for further
+                            research in computer vision, particularly in the areas of object recognition, scene understanding,
+                            and visual navigation.
+                        </li>
+                    </ul>
+                </p> 
+            </div>
+        </section>
+        <section id="models">
+            <div class="picture">
+                <table>
+                    <tr>
+                      <th>Algorithm</th>
+                      <th>Complexity</th>
+                      <th>Speed</th>
+                      <th>Accuracy</th>
+                      <th>Efficiency</th>
+                    </tr>
+                    <tr>
+                      <td>Faster R-CNN</td>
+                      <td>High</td>
+                      <td>Slow</td>
+                      <td>High</td>
+                      <td>Less Efficient</td>
+                    </tr>
+                    <tr>
+                      <td>YOLO</td>
+                      <td>Medium</td>
+                      <td>Fast</td>
+                      <td>Medium</td>
+                      <td>Efficient</td>
+                    </tr>
+                    <tr>
+                      <td>SSD</td>
+                      <td>Low</td>
+                      <td>Fast</td>
+                      <td>Low</td>
+                      <td>Efficient</td>
+                    </tr>
+                  </table>
+            </div>
+            <div class="text" >
+                <h2>Models</h2>
+                <h3>YOLO</h3>
+                <p>
+                    A single-stage detector that divides the input image into a grid and predicts bounding boxes and class probabilities directly from the grid cells. Prioritizes speed, making it ideal for real-time applications like video surveillance or self-driving cars.
+                </p>
+                <h3>SSD</h3>
+                <p>
+                    A single-stage detector that uses a feature pyramid to detect objects at multiple scales. Offers a good balance between speed and accuracy, suitable for applications where both factors are important
+                </p>
+                <h3>Faster R-CNN</h3>
+                <p>
+                    A two-stage detector. It first generates region proposals (potential bounding boxes) and then classifies and refines these proposals. Best for applications where the highest possible accuracy is the primary goal, even if it means sacrificing some speed.
+                </p>
+            </div>
+        </section>
+        <section id="dataset">
+            <div class="text" >
+                <h2>Dataset</h2>
+                <p>The dataset contains a total of 890 different photos on which  we want to recognize 3 main  classes of objects: finish,
+                    robot, and obstacle, where an obstacle is any object other than the target or the robot.
+                </p> 
+                <h3>Future development</h3>
+                <p>
+                    Our dataset has the potential for further expansion. Increasing its size could significantly 
+                    improve the accuracy and reliability of our models. The goal is to achieve a more comprehensive 
+                    and representative dataset that better reflects real-world conditions.
+                </p>
+                <p>
+                    Our dataset should be capable of identifying any obstacle, excluding the robot and finish itself.
+                    This means the dataset should be continuously expanded to include a wide variety of
+                    obstacles that the robot may encounter in its environment.
+                </p>
+            </div>
+            <div class="picture">
+                <div id="grid">
+                    <img src="foto/Obrazok.jpg" alt="Obrázok 1">
+                    <img src="foto/Obrazok1.jpg" alt="Obrázok 2">
+                    <img src="foto/Obrazok2.jpg" alt="Obrázok 3">
+                    <img src="foto/Obrazok3.jpg" alt="Obrázok 4">
+                </div>
+            </div>
+        </section>
+
+        <section id="train">
+            <div class="picture">
+                <img src="foto/YOLO.png" alt="">
+            </div>
+            <div class="text" >
+                <h2>Training</h2>
+                <p>A crucial part of our project was this training session.</p>
+                <h3>Trainig parameters:</h3>
+                <ul>
+                    <li>Model: YOLOv8s (lightweight object detection model)</li>
+                    <li>Epochs: 15 (number of training iterations)</li>
+                    <li>Batch Size: 16 (number of images processed together)</li>
+                    <li>Image Size: 640x640 (input image size for the model)</li>
+                    <li>Validation: Enabled (evaluates model performance on a separate validation set)</li>
+                    <li>IoU Threshold: 0.7 (minimum overlap for considering a detection correct)</li>
+                    <li>Augmentation: Enabled (random transformations applied to data for improved generalization)</li>
+                    <li>Learning Rate: 0.01 (initial learning rate for the optimizer)</li>
+                    <li>Optimizer: Adam (optimization algorithm used to update model weights)</li>
+                </ul>
+                <h3>Roboflow Trainig</h3>
+                <p>To gain valuable insights and establish a baseline, we trained our model not only using our 
+                    own infrastructure but also on Roboflow's cloud platform. This allowed us to directly
+                     compare the performance and training outcomes achieved on Roboflow with those obtained
+                      from our own training setup.</p>
+            </div>
+        </section>
+
+        <section id="evaluation">
+            <div class="text" >
+                <h2>Evaluation</h2>
+                <p>We trained our model on both our own infrastructure and Roboflow's cloud platform.
+                    By comparing the val-box-loss, training-box-loss, and mAP 50-95 graphs from both
+                    platforms, we were able to gain valuable insights into the model's performance
+                    and identify potential areas for improvement. These graphs provide a visual
+                    representation of how well our model is learning to localize objects in images.</p> 
+                <ul>
+                    <li><b>val-box-loss graph:</b> This graph shows the average loss (error) associated with the bounding
+                        box predictions on a validation set. A decreasing trend in this
+                        graph indicates that the model is improving its ability to localize objects.</li>
+                    <li><b>training-box-loss graph:</b> This graph shows the average loss associated with the bounding
+                         box predictions on the training set.
+                          A decreasing trend in this graph indicates that the model is learning.</li>
+                    <li><b>mAP 50-95 graph:</b> This graph shows the mean Average Precision (mAP) at different Intersection over Union (IoU) thresholds between 0.5
+                        and 0.95. mAP is a widely used metric for
+                        evaluating object detection models.
+                        A higher mAP value indicates better overall performance.</li>
+                </ul>
+                <p>
+                    Analysis of the val-box-loss, training-box-loss, and mAP 50-95 graphs
+                    revealed minimal performance differences between models trained
+                    on our local setup and Roboflow's cloud platform. The primary
+                    distinction observed was that training on the server required significantly more time.
+                </p>
+            </div>
+            <div class="picture">
+                <div id="grid">
+                    <img src="foto/val_box_loss.png" alt="Obrázok 2">
+                    <img src="foto/metrics_mAP50_B.png" alt="Obrázok 1">
+                    <img src="foto/train_box_loss.png" alt="Obrázok 3">
+                    <img src="foto/image.png" alt="Obrázok 4">
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; YOLO bolo</p>
+    </footer>
+
+</body>
+</html>
